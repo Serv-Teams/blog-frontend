@@ -30,16 +30,16 @@ function slugify(str: any) {
 
 export const getCompanies = unstable_cache(
   async () => {
-    const db = client.db("marketplace");
-    const companies = await db.collection("companies").find({}).toArray();
-    return companies;
+    const db = client.db("company");
+    const profiles = await db.collection("profiles").find({}).toArray();
+    return profiles;
   },
-  ["companies"],
-  { revalidate: 1, tags: ["companies"] }
+  ["profiles"],
+  { revalidate: 1, tags: ["profiles"] }
 );
 
 export const getCompany = async (slug: string) => {
-  const db = client.db("marketplace");
-  const company = await db.collection("companies").findOne({ slug: slug });
-  return company;
+  const db = client.db("company");
+  const profile = await db.collection("profiles").findOne({ slug: slug });
+  return profile;
 };

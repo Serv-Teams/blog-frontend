@@ -30,23 +30,37 @@ function slugify(str: any) {
 
 export const getBlogs = unstable_cache(
     async () => {
-        const db = client.db("marketplace");
-        const blogs = await db
-            .collection("blogs")
+        const db = client.db("blog");
+        const posts = await db
+            .collection("posts")
             .find({})
             .toArray();
-        return blogs;
+        return posts;
     },
-    ['blogs'],
-    { revalidate: 1, tags: ['blogs'] }
+    ['posts'],
+    { revalidate: 1, tags: ['posts'] }
 )
 
+export const getBlogsByTopic = unstable_cache(
+    async (firstSlug: string) => {
+        const db = client.db("blog");
+        const posts = await db
+            .collection("posts")
+            .find({ "slugs.0": firstSlug })
+            .toArray();
+        return posts;
+    },
+    ['posts'],
+    { revalidate: 1, tags: ['posts'] }
+)
+
+
 export const getBlog = async (slug: string) => {
-    const db = client.db("marketplace");
-    const blog = await db
-        .collection("blogs")
-        .findOne({ slug: slug })
-    return blog;
+    const db = client.db("blog");
+    const post = await db
+        .collection("posts")
+        .findOne({ slugs: slug })
+    return post;
 }
 
 // export async function upsertPost(prevState: any, formData: FormData) {

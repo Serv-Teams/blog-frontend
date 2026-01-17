@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { getBlogs, getBlog } from "@/actions/perusahaan/Blog";
+import { getBlogs, getBlog } from "@/actions/Blog";
 // import { getProfile } from "@/actions/perusahaan/Profile";
 import { getCompany } from "@/actions/perusahaan/Company";
 import { getProduct, getProducts } from "@/actions/perusahaan/Product";

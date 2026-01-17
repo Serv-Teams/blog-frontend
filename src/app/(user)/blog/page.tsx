@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Blogs from './Blogs';
-import { getBlogs } from '@/actions/perusahaan/Blog';
+import Blogs from '../components/Blogs';
+import { getBlogs } from '@/actions/Blog';
 import { getCompanies } from '@/actions/perusahaan/Company';
 import { notFound } from 'next/navigation';
 

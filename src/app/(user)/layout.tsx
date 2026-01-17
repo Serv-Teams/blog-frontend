@@ -21,8 +21,8 @@ export default function Layout({
     return (
         <>
             <CssBaseline enableColorScheme />
-            <AppAppBar />
-            {
+            {/* <AppAppBar /> */}
+            {/* {
                 pathname === "/" ?
                     <>
                         <Hero />
@@ -35,8 +35,15 @@ export default function Layout({
                     >
                         {children}
                     </Container>
-            }
+            } */}
 
+            <Container
+                maxWidth="lg"
+                component="main"
+                sx={{ display: 'flex', flexDirection: 'column', my: 20 }}
+            >
+                {children}
+            </Container>
 
             <Footer />
         </>
