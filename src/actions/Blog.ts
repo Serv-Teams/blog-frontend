@@ -1,21 +1,6 @@
 'use server';
-import { cache } from 'react'
-import { revalidatePath, unstable_cache } from 'next/cache'
+import { unstable_cache } from 'next/cache'
 import client from '@/lib/mongodb';
-import { redirect } from 'next/navigation';
-
-import { ObjectId } from 'mongodb';
-
-// Define the Movie interface
-interface Blog {
-    title: string;
-    slug: string[];
-    topic: string;
-    content: string;
-    img: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
 
 function slugify(str: any) {
     return String(str)
