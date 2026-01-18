@@ -26,6 +26,34 @@ export const getBlogs = unstable_cache(
     { revalidate: 1, tags: ['posts'] }
 )
 
+export const getTopics = unstable_cache(
+    async () => {
+        const db = client.db("blog");
+        const posts = await db
+            .collection('posts')
+            .aggregate([
+                { $match: { status: 'published' } },
+                {
+                    $group: {
+                        _id: { $arrayElemAt: ['$slugs', 0] },
+                        topic: { $first: '$topic' }
+                    }
+                },
+                {
+                    $project: {
+                        _id: 0,
+                        slug: '$_id',
+                        topic: 1
+                    }
+                }
+            ])
+            .toArray()
+        return posts;
+    },
+    ['posts'],
+    { revalidate: 1, tags: ['posts'] }
+)
+
 export const getBlogsByTopic = unstable_cache(
     async (firstSlug: string) => {
         const db = client.db("blog");

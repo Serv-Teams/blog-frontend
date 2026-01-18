@@ -16,7 +16,7 @@ export default async function Page({
             <>
                 {
                     data.map((d: any) => (
-                        <div key={d._id}>{d.title}</div>
+                        <div key={d._id}>{d.title} {d.slugs.map((s: any) => s[1])}</div>
                     ))
                 }
             </>
