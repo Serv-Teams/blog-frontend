@@ -1,6 +1,7 @@
 import { getBlogs, getBlog, getBlogsByTopic } from "@/actions/Blog";
 import Blog from "./components/Blog";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export default async function Page({
     params,
@@ -15,9 +16,18 @@ export default async function Page({
         return (
             <>
                 {
-                    data.map((d: any) => (
-                        <div key={d._id}>{d.title} {d.slugs.map((s: any) => s[1])}</div>
-                    ))
+                    data.map((d: any) => {
+                        const fullUrl = `/${d.slugs.join('/')}`;
+                        return (
+
+                            <div key={d._id}>
+                                {d.title}
+                                <Link href={fullUrl}>
+                                    Baca Selengkapnya
+                                </Link>
+                            </div>
+                        )
+                    })
                 }
             </>
         )

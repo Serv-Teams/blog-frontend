@@ -13,7 +13,7 @@ export default function Blogs({ data }: { data: any[] }) {
                 return (
                     <div key={post._id} style={{ marginBottom: '10px' }}>
                         <h2>{post.title}</h2>
-                        <Link href={fullUrl} className="text-blue-500 hover:underline">
+                        <Link href={fullUrl}>
                             Baca Selengkapnya
                         </Link>
                     </div>
