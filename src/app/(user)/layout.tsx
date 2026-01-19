@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Footer from './components/Footer';
 
-import { getTopics } from '@/actions/Blog';
+import { getTopics } from '@/actions/blog/Posts';
 import NavigationClient from './components/BlogNavigation'
 
 export default async function Layout({

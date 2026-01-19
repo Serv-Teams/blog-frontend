@@ -13,7 +13,7 @@ function slugify(str: any) {
         .replace(/-+/g, '-'); // remove consecutive hyphens
 }
 
-export const getBlogs = unstable_cache(
+export const getPosts = unstable_cache(
     async () => {
         const db = client.db("blog");
         const posts = await db
@@ -54,7 +54,7 @@ export const getTopics = unstable_cache(
     { revalidate: 1, tags: ['posts'] }
 )
 
-export const getBlogsByTopic = unstable_cache(
+export const getPostsByTopic = unstable_cache(
     async (firstSlug: string) => {
         const db = client.db("blog");
         const posts = await db
@@ -68,7 +68,7 @@ export const getBlogsByTopic = unstable_cache(
 )
 
 
-export const getBlog = async (slug: string) => {
+export const getPost = async (slug: string) => {
     const db = client.db("blog");
     const post = await db
         .collection("posts")

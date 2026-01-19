@@ -1,4 +1,4 @@
-import { getBlogs, getBlog, getBlogsByTopic } from "@/actions/Blog";
+import { getPost, getPostsByTopic } from "@/actions/blog/Posts";
 import Blog from "./components/Blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -11,7 +11,7 @@ export default async function Page({
     const { slug } = await params
 
     if (slug.length === 1) {
-        const data = JSON.parse(JSON.stringify(await getBlogsByTopic(slug[0])));
+        const data = JSON.parse(JSON.stringify(await getPostsByTopic(slug[0])));
 
         return (
             <>
@@ -33,7 +33,7 @@ export default async function Page({
         )
 
     } else if (slug.length === 2) {
-        const blog = JSON.parse(JSON.stringify(await getBlog(slug[1])));
+        const blog = JSON.parse(JSON.stringify(await getPost(slug[1])));
         return <Blog content={blog.content} title={blog.title} />;
     } else
         return <div>My Post: {slug}</div>
