@@ -1,4 +1,4 @@
-import { getPost, getPostsByTopic } from "@/actions/blog/Posts";
+import { getPost, getPostsByTopic } from "@/actions/Posts";
 import Blog from "./components/Blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
