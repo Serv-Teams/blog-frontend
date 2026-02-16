@@ -1,15 +1,10 @@
-import * as React from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import MaterialUILink from '@mui/material/Link';
-import NextLink from '@/app/components/Link';
 
 import type { Metadata } from 'next'
 import Blogs from './components/Blogs';
 import { getPosts } from '@/actions/Posts';
 import { notFound } from 'next/navigation';
-import AuthButton from '@/app/components/AuthButton';
 
 
 export const metadata: Metadata = {

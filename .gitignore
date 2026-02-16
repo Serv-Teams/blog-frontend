@@ -41,5 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # ignore route
-/src/app/(admin)/*
-/src/app/login/*
+/src/app/(development)/*
