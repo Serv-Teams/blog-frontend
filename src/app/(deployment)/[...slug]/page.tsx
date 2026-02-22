@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { getPost, getPostsByTopic } from "@/actions/Posts";
-import Blog from "./components/Blog";
+import { getPost, getPostsByTopic } from "./_actions/Posts";
+import Blog from "./_components/Blog";
 import Link from "next/link";
 import { Box, Container } from "@mui/material";
 

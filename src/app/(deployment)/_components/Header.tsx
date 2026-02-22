@@ -1,3 +1,5 @@
+'use client';
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -10,7 +12,7 @@ export default function Header() {
         <AppBar position="sticky" elevation={0}>
             <Toolbar>
                 <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                    Corporate Blog
+                    Serv
                 </Typography>
 
                 <Box>

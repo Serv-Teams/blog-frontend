@@ -2,8 +2,8 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 
 import type { Metadata } from 'next'
-import Blogs from './components/Blogs';
-import { getPosts } from '@/actions/Posts';
+import Blogs from './_components/Blogs';
+import { getPosts } from './_actions/Posts';
 import { notFound } from 'next/navigation';
 
 
