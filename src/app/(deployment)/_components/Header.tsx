@@ -17,10 +17,10 @@ export default function Header() {
 
                 <Box>
                     <Button color="inherit" component={Link} href="/">
-                        Home
+                        Beranda
                     </Button>
-                    <Button color="inherit" component={Link} href="/about">
-                        About
+                    <Button color="inherit" component={Link} href="/about-us">
+                        Tentang Kami
                     </Button>
                 </Box>
             </Toolbar>
