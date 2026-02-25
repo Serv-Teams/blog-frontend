@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Link from "next/link";
+import ModeSwitch from "@/app/components/ModeSwitch";
 
 export default function Header() {
     return (
@@ -22,6 +23,7 @@ export default function Header() {
                     <Button color="inherit" component={Link} href="/about-us">
                         Tentang Kami
                     </Button>
+                    <ModeSwitch />
                 </Box>
             </Toolbar>
         </AppBar>
