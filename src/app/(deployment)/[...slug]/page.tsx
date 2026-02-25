@@ -25,20 +25,20 @@ export async function generateMetadata(
 
         return {
             title: blog?.title || "Blog",
-            description: blog?.content?.slice(0, 150) || "Blog post",
+            description: blog?.content?.slice(0, 150) || "Postingan Blog",
         };
     }
 
     if (slug.length === 1) {
         return {
-            title: `Topic: ${slug[0]}`,
-            description: `Posts under topic ${slug[0]}`,
+            title: `Topik: ${slug[0]}`,
+            description: `Daftar Postingan dengan Topik ${slug[0]}`,
         };
     }
 
     return {
         title: "Blog",
-        description: "Blog page",
+        description: "Halaman Blog dengan berbagai topik dan postingan menarik.",
     };
 }
 
