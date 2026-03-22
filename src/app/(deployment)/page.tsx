@@ -15,7 +15,7 @@ export default async function Blog() {
     <Container
       maxWidth="lg"
       component="main"
-      sx={{ display: 'flex', flexDirection: 'column', my: 16, gap: 4 }}
+      sx={{ display: 'flex', flexDirection: 'column', my: 10, gap: 4 }}
     >
       <Latest data={data} />
     </Container>
